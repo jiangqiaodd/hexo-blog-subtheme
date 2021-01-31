@@ -1,0 +1,26 @@
+<%- partial('_partial/head') %>
+<body class="main">
+  <div class="clouds">
+    <div id="wrapper">
+      <div id="innerWrapper">
+        <div id="pageTop"></div>
+        <div id="pageHeader">
+          <div id="anniversary">
+            <span>18576</span>
+          </div>
+          <ul id="pageNav">
+            <% for (var i in theme.menu){ %>
+            <li><a title="<%= i %>" href="<%- url_for(theme.menu[i]) %>"><%= i %></a></li>
+            <% } %>
+          </ul>
+        </div>
+        <div id="pageContent">
+          <%- body %>
+          <div class="clear"></div>
+          <%- partial('_partial/footer') %>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<div id="footer" class="footer">
+
+    <p align="center"><strong>COPY RIHGT&copy; 2020</strong> | Themes:<strong
+            style="color:#94A4FF">Sweet</strong>-<strong style="color:#FFB296">Clouds</strong> By <a
+            href="https://www.heson10.com" target="_blank"><strong>Heson</strong></a></p>
+
+    <p align="center"> <a href="https://love.heson10.com" title="情侣微博">
+
+            <strong>情侣微博1.0</strong> 持续优化中
+
+        </a> Proudly By <a href="http://hexo.io" target="_blank">Hexo</a></p>
+    <%- js('js/jquery')%>
+    <%- js('js/all')%>
+    <script src="https://cdn.bootcss.com/vue/2.6.11/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@4.5.3/dist/av-min.js"></script>
+    <script>
+
+        var {
+            Query
+        } = AV;
+        AV.init({
+            appId: "<%- theme.boybb.appId%>",
+            appKey: "<%- theme.boybb.appKey%>",
+            serverURLs: '<%- theme.boybb.serverUrl%>'
+        });
+
+        var query = new AV.Query('content');
+
+
+
+
+        var app = new Vue({
+            el: '#app',
+            data: {
+                page: 0,
+                count: 0,
+                contents: []
+            },
+            methods: {
+                loadMore1: function (event) {
+
+                    var {
+                        Query
+                    } = AV;
+                    AV.init({
+                        appId: "<%- theme.boybb.appId%>",
+                        appKey: "<%- theme.boybb.appKey%>",
+                        serverURLs: '<%- theme.boybb.serverUrl%>'
+                    });
+
+                    var query = new AV.Query('content');
+                    getData1(++this.page);
+                }
+            }
+        })
+
+        var app2 = new Vue({
+            el: '#app2',
+            data: {
+                page: 0,
+                count: 0,
+                contents: []
+            },
+            methods: {
+                loadMore2: function (event) {
+                    var {
+                        Query
+                    } = AV;
+                    AV.init({
+                        appId: "<%- theme.girlbb.appId%>",
+                        appKey: "<%- theme.girlbb.appKey%>",
+                        serverURLs: '<%- theme.girlbb.serverUrl%>'
+                    });
+
+                    var query2 = new AV.Query('content');
+
+
+
+
+
+
+                    getData2(++this.page);
+                }
+            }
+        })
+        query.count().then(function (count) {
+            app.count = count;
+        }, function (error) { });
+
+        getData1(0);
+
+        var {
+            Query
+        } = AV;
+        AV.init({
+            appId: "<%- theme.girlbb.appId%>",
+            appKey: "<%- theme.girlbb.appKey%>",
+            serverURLs: '<%- theme.girlbb.serverUrl%>'
+        });
+
+
+        var query2 = new AV.Query('content');
+
+        query2.count().then(function (count) {
+            app2.count = count;
+        }, function (error) { });
+
+        getData2(0);
+
+        function urlToLink(str) {
+            // var re = /(http|ftp|https):\/\/[\w-]+(.[\w-]+)+([\w-.,@?^=%&:/~+#]*[\w-\@?^=%&/~+#])?/g; 
+            var re = /\bhttps?:\/\/(?!\S+(?:jpe?g|png|bmp|gif|webp|gif))\S+/g;
+            var re_forpic = /\bhttps?:\/\/.*?(\.gif|\.jpeg|\.png|\.jpg|\.bmp|\.webp)/g;
+            var re_forpic_vx = /^http:\/\/mmbiz\.qpic\.cn[^\s]*/g;
+            str = str.replace(re, function (website) {
+                return "<a href='" + website + "' target='_blank'> <i class='iconfont icon-lianjie-copy'></i>链接 </a>";
+            });
+            str = str.replace(re_forpic, function (imgurl) {
+                return "<img src='" + imgurl + "'  /> ";
+            });
+            str = str.replace(re_forpic_vx, function (imgurl) {
+                return "<img src='" + imgurl + "'  /> ";
+            });
+            return str;
+        };
+
+        //男生获取哔哔
+        function getData1(page = 0) {
+            query.descending('createdAt').skip(page * 10).limit(10).find().then(function (results) {
+                if (results.length == 0) {
+                    alert('之前没发表过说说了')
+                } else {
+                    let resC = results;
+                    reqData = false;
+                    resC.forEach((i) => {
+                        let d = new Date(i.createdAt);
+                        datetime = d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate();
+                        i.attributes.time = datetime;//☆友好地显示时间改为 i.attributes.time = timeago(d);
+                        i.attributes.content = urlToLink(i.attributes.content);
+                        app.contents.push(i);
+                    })
+                }
+
+            }, function (error) { });
+        }
+
+
+        //女生获取哔哔
+        function getData2(page = 0) {
+            query2.descending('createdAt').skip(page * 10).limit(10).find().then(function (results) {
+                if (results.length == 0) {
+                    alert('之前没发表过哔哔了')
+                } else {
+                    let resC = results;
+                    reqData = false;
+                    resC.forEach((i) => {
+                        let d = new Date(i.createdAt);
+                        datetime = d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate();
+                        i.attributes.time = datetime; //☆友好地显示时间改为 i.attributes.time = timeago(d);
+                        i.attributes.content = urlToLink(i.attributes.content);
+                        app2.contents.push(i);
+                    })
+                }
+
+            }, function (error) { });
+        }
+
+        //友好地显示时间,按需修改上面标记☆的代码
+        function timeago(dateTimeStamp) {
+
+            var minute = 1000 * 60;
+            var hour = minute * 60;
+            var day = hour * 24;
+            var halfamonth = day * 15;
+            var month = day * 30;
+
+            var now = new Date().getTime();
+            var diffValue = now - dateTimeStamp;
+
+            if (diffValue < 0) {
+                //非法操作
+                //alert("结束日期不能小于开始日期！");
+            }
+
+            var monthC = diffValue / month;
+            var weekC = diffValue / (7 * day);
+            var dayC = diffValue / day;
+            var dayR = diffValue / hour % 24;
+            var hourC = diffValue / hour;
+            var hourR = diffValue / minute % 60;
+            var minC = diffValue / minute;
+            var minR = diffValue / 1000 % 60;
+            if (monthC >= 1) {
+                result = getLocalTime(dateTimeStamp / 1000);
+            } else if (weekC >= 1) {
+                result = parseInt(weekC) + "周前";
+            } else if (dayC >= 1) {
+                result = parseInt(dayC) + "天" + parseInt(dayR) + "小时前";
+            } else if (hourC >= 1) {
+                result = parseInt(hourC) + "小时" + parseInt(hourR) + "分钟前";
+            } else if (minC >= 1) {
+                result = parseInt(minC) + "分钟" + parseInt(minR) + "秒前";
+            } else result = "刚刚发表";
+            return result;
+        }
+
+        function getLocalTime(nS) {
+            return new Date(parseInt(nS) * 1000).toLocaleString().replace(/:\d{1,2}$/, ' ');
+        }
+
+    </script>
+
+
+
+</div>
