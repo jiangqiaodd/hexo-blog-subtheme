@@ -1,9 +1,40 @@
 <section class="date">
-  <div class="date">
-      <h2><%= theme.lover.boy %> and <%= theme.lover.girl %> have been together for</h2>
+
+  <div class="date" :style="{'background-color':logobg,'background-image': 'url('+logo+')'}">
+
+      <h4 color="#7FFFD4">We have known each other for</h4>
       <div class="timer">
-      <b id="d"></b> Days <b id="h"></b> Hours <b id="m"></b> Minutes <b id="s"></b> Seconds
+      <b id="known_d"></b> Days <b id="known_h"></b> Hours <b id="known_m"></b> Minutes <b id="known_s"></b> Seconds
       </div>
+
+      <div class="text"> 于千万人之中，遇见你 ; 于千万年之中，恰相逢; -- 张爱玲的《爱》
+      </div>
+      <hr>
+
+
+      <h3><%= theme.lover.boy %> have loved <%= theme.lover.girl %> for</h3>
+      <div class="timer">
+      <b id="love_d"></b> Days <b id="love_h"></b> Hours <b id="love_m"></b> Minutes <b id="love_s"></b> Seconds
+      </div>
+
+      <div class="text"> 有美人兮，见之不忘，一日不见兮，思之如狂; -- 司马相如辞赋
+      </div>
+      <hr>
+
+
+      <h2>We have been together for</h2>
+      <div class="timer">
+      <b id="together_d"></b> Days <b id="together_h"></b> Hours <b id="together_m"></b> Minutes <b id="together_s"></b> Seconds
+      </div>
+
+      <div class="text"> 居愿接膝坐，行愿携手趋。
+                         子静我不动，子游我无留。<br>
+                         齐彼同心鸟，譬此比目鱼。
+                         情至断金石，胶漆未为牢。<br>   -- 杨方
+      </div>
+      <hr>
+
+
       <div class="song">
           <!--页面底部歌词-->
           <!-- require APlayer -->
@@ -27,22 +58,41 @@
       <script>
         function timer() {
         window.setTimeout("timer()", 1000);
-        var start = new Date("<%= theme.date.start %>");
-        var t = new Date().getTime() - start;
+        var known_start = new Date("<%= theme.date.known_start %>");
+        var t = new Date().getTime() - known_start;
         var h = ~~(t / 1000 / 60 / 60 % 24);
         if (h < 10) {h = "0" + h;}
         var m = ~~(t / 1000 / 60 % 60);
         if (m < 10) { m = "0" + m;}
         var s = ~~(t / 1000 % 60);
        if (s < 10) {s = "0" + s;}
-        document.getElementById('d').innerHTML = ~~(t / 1000 / 60 / 60 / 24);
-       document.getElementById('h').innerHTML = h;
-       document.getElementById('m').innerHTML = m;
-       document.getElementById('s').innerHTML = s;}
+       document.getElementById('known_d').innerHTML = ~~(t / 1000 / 60 / 60 / 24);
+       document.getElementById('known_h').innerHTML = ~~(t / 1000 / 60 / 60 % 24);
+       document.getElementById('known_m').innerHTML = ~~(t / 1000 / 60 % 60);
+       document.getElementById('known_s').innerHTML = ~~(t / 1000 % 60);
+
+       var love_start = new Date("<%= theme.date.love_start %>");
+       var love_time = new Date().getTime() - love_start;
+       var together_start = new Date("<%= theme.date.together_start %>");
+       var together_time = new Date().getTime() - together_start;
+
+      document.getElementById('love_d').innerHTML = ~~(love_time / 1000 / 60 / 60 / 24);
+      document.getElementById('love_h').innerHTML = ~~(love_time / 1000 / 60 / 60 % 24);
+      document.getElementById('love_m').innerHTML = ~~(love_time / 1000 / 60 % 60);
+      document.getElementById('love_s').innerHTML = ~~(love_time / 1000 % 60);
+
+      document.getElementById('together_d').innerHTML = ~~(together_time / 1000 / 60 / 60 / 24);
+      document.getElementById('together_h').innerHTML = ~~(together_time / 1000 / 60 / 60 % 24);
+      document.getElementById('together_m').innerHTML = ~~(together_time / 1000 / 60 % 60);
+      document.getElementById('together_s').innerHTML = ~~(together_time / 1000 % 60);
+
+       }
+
+
         timer();
       </script> 
-<!--END：计时器js-->
+    <!--END：计时器js-->
 
-<!--鼠标点击显示爱心-->
-<script src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/love.js"></script>
-  </section>
+    <!--鼠标点击显示爱心-->
+    <script src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/love.js"></script>
+</section>

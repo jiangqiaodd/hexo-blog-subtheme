@@ -1,18 +1,23 @@
 #Jimmy Kudo是工藤新一英文名，Rachel Moore是毛利兰英文名
 lover:
-  boy: Bridge John
-  girl: Dream Shine
+  boy: Bridge
+  girl: Dream
 
 date:
-  start: "2018-12-14 00:00:00"
+  known_start: "2009-09-17 00:00:00"
+  love_start:  "2010-01-01 00:00:00"
+  together_start: "2018-12-14 00:00:00"
+
+menu:
+
 
 ##音乐播放器
 # https://github.com/MoePlayer/APlayer
 # https://github.com/metowolf/MetingJS
 playlist:
   server: netease #音乐平台: netease, tencent, kugou, xiami, baidu
-  type: playlist #类型：song, playlist, album, search, artist
-  id: 2042070338 #ID：song id, playlist id, album id, search keyword
+  type: album #类型：song, playlist, album, search, artist
+  id: 16606 #ID：song id, playlist id, album id, search keyword
   fixed: true
   autoplay: true #可选：自动播放true,不自动播放false
   order: list #可选：随机random，列表list
@@ -23,9 +28,9 @@ playlist:
 # 配置详见： https://github.com/hustcc/canvas-nest.js#configuration
 canvas_nest:
   enable: true
-  color: '177, 122, 125'        # color of lines, default: '0,0,0'; RGB values: (R,G,B).(note: use ',' to separate.)
+  color: '255,182,193'        # color of lines, default: '0,0,0'; RGB values: (R,G,B).(note: use ',' to separate.)
   pointColor: '156,39,176'     # color of points, default: '0,0,0'; RGB values: (R,G,B).(note: use ',' to separate.)
-  opacity: '2'               # the opacity of line (0~1), default: 0.5.
+  opacity: '5'               # the opacity of line (0~1), default: 0.5.
   count: '200'                  # the number of lines, default: 99.
   zIndex: '-1'                 # z-index property of the background, default: -1.
 
