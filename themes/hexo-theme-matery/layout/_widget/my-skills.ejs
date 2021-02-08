@@ -5,7 +5,7 @@ var topSkillArr = [];
 %>
 <div class="my-skills">
     <div class="title center-align" data-aos="zoom-in-up">
-        <i class="fas fa-wrench"></i>&nbsp;&nbsp;<%- __('mySkills') %>
+        <i class="fas fa-line-chart"></i>&nbsp;&nbsp;<%- __('Love Progress') %>
     </div>
     <div class="row">
         <% if (mySkills) { %>
@@ -40,20 +40,5 @@ var topSkillArr = [];
         return false;
     }
     %>
-
-    <% if (site.tags) { %>
-    <div class="other-skills chip-container" data-aos="zoom-in-up">
-        <div class="sub-title center-align"><i class="fa fa-book"></i>&nbsp;&nbsp;<%- __('otherSkills') %></div>
-        <div class="tag-chips center-align">
-            <% site.tags.map(function(tag) { %>
-            <% if (!isInArray(topSkillArr, tag.name)) { %>
-            <a href="<%- url_for(tag.path) %>">
-                <span class="chip center-align waves-effect waves-light chip-default"><%- tag.name %></span>
-            </a>
-            <% } %>
-            <% }); %>
-        </div>
-    </div>
-    <% } %>
 
 </div>

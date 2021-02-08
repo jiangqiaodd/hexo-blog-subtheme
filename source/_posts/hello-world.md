@@ -1,7 +1,9 @@
 ---
-title: Hello World
+title: Hello World, My Hexo
+date: 2021-02-01 10:48:09
+tags: hexo
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
+如何使用hexo构建自己的博客呢？
 
 ## Quick Start
 

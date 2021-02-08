@@ -2403,6 +2403,9 @@ readers do not read off random characters that represent icons */
 .fa-line:before {
   content: "\f3c0"; }
 
+.fa-line-chart:before {
+  content: "\f201"; }
+
 .fa-link:before {
   content: "\f0c1"; }
 

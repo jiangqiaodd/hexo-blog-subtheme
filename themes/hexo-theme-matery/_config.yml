@@ -7,45 +7,52 @@ menu:
   Tags:
     url: /tags
     icon: fas fa-tags
-  Categories:
-    url: /categories
-    icon: fas fa-bookmark
+#  Categories:
+#    url: /categories
+#    icon: fas fa-bookmark
   Archives:
     url: /archives
     icon: fas fa-archive
-  About:
+  About us:
     url: /about
-    icon: fas fa-user-circle
-  Contact:
-    url: /contact
-    icon: fas fa-comments
-  Friends:
-    url: /friends
-    icon: fas fa-address-book
+    icon: fas fa-venus-mars
+#  Contact:
+#    url: /contact
+#    icon: fas fa-comments
+#  Friends:
+#    url: /friends
+#    icon: fas fa-address-book
   # 二级菜单写法如下
-  #Medias:
-  #  icon: fas fa-list
-  #  children:
-  #    - name: Musics
-  #      url: /musics
-  #      icon: fas fa-music
-  #    - name: Movies
-  #      url: /movies
-  #      icon: fas fa-film
-  #    - name: Books
-  #      url: /books
-  #      icon: fas fa-book
-  #    - name: Galleries
-  #      url: /galleries
-  #      icon: fas fa-image
+  Love nest:
+    icon: fas fa-list
+    children:
+      - name: Love-date
+        url: ../lovedate
+        icon: fas fa-star-and-crescent
+      - name: Love-stickies
+        url: ../sweetcloud
+        icon: fas fa-sticky-note
+      - name: Galleries
+        url: ../galleries
+        icon: fas fa-image
+      - name: Musics
+        url: /musics
+        icon: fas fa-music
+      - name: Movies
+        url: /movies
+        icon: fas fa-film
+      - name: Books
+        url: /books
+        icon: fas fa-book
+
 
 # Website start time.
 # 站点运行开始时间.
 time:
   enable: false
-  year: 2019 # 年份
-  month: 06 # 月份
-  date: 28 # 日期
+  year: 2021 # 年份
+  month: 02 # 月份
+  date: 01 # 日期
   hour: 00 # 小时
   minute: 00 # 分钟
   second: 00 # 秒
@@ -53,21 +60,44 @@ time:
 # Index cover carousel configuration.
 # 首页封面轮播图的相关配置.
 cover:
-  showPrevNext: true # 是否显示左右切换按钮. Whether to display the left and right toggle buttons.
-  showIndicators: true # 是否显示指示器. # Whether to display the indicators
+  showPrevNext: false # 是否显示左右切换按钮. Whether to display the left and right toggle buttons.
+  showIndicators: false # 是否显示指示器. # Whether to display the indicators
   autoLoop: true # 是否自动轮播. Whether it is automatically rotated.
   duration: 120 # 切换延迟时间. Switching delay time.
   intervalTime: 5000 # 自动切换下一张的间隔时间. Automatically switch the interval of the next one.
   useConfig: false # 是否使用配置文件, 在 _data/covers.json 下配置推荐文章, false则使用主题在文章中的配置 cover coverImg
   # useConfig 使用方式: 将主题 hexo-theme-matery/source/_data/covers.json 移动到 my-blog/source/_data/下修改配置即可
 
+
+# 打字效果副标题.
+# 如果有符号 ‘ ，请在 ’ 前面加上 \
+subtitle:
+  enable: true
+  loop: true # 是否循环
+  showCursor: true # 是否显示光标
+  startDelay: 300 # 开始延迟
+  typeSpeed: 100 # 打字速度
+  backSpeed: 50 # 删除速度
+  sub:
+    - 念念不忘 必有回响 心之所向 目之所及
+    - Hold in heart, blossom around.  Where the heart is, where the eye is.
+
+# The configuration of the second button in the home banner,
+# including the display name of the button, the font awesome icon, and the hyperlink to the button.
+# 首页 banner 中的第二个按钮的配置，包括按钮的显示名称、font awesome图标和按钮的超链接.
+indexbtn:
+  enable: true
+  name: WorkHome
+  icon: fab fa-github-alt
+  url: ../
+
 # index page dream text,
 # 配置首页显示"梦想"的语句.
 dream:
   enable: true
   showTitle: true
-  title: 我的梦想
-  text: 不是每个人都应该像我这样去建造一座水晶大教堂，但是每个人都应该拥有自己的梦想，设计自己的梦想，追求自己的梦想，实现自己的梦想。梦想是生命的灵魂，是心灵的灯塔，是引导人走向成功的信仰。有了崇高的梦想，只要矢志不渝地追求，梦想就会成为现实，奋斗就会变成壮举，生命就会创造奇迹。——罗伯·舒乐
+  title: dream of bridge
+  text: You are my dream, you are my infinite miss, you are my eternal love
 
 # Whether to display the musics.
 # 是否在首页显示音乐.
@@ -93,18 +123,18 @@ music:
 # Whether to display the videos.
 # 是否在首页显示视频.
 video:
-  enable: false
+  enable: true
   showTitle: true
-  title: 精彩视频
-  url: # 必填
+  title: small video
+  url: /medias/mengfan1.mp4
   pic:
   thumbnails:
   height: # 如：400
-  autoplay: false # 是否自动播放
+  autoplay: true # 是否自动播放
   theme: '#42b983'
-  loop: false # 是否循环播放
+  loop: true # 是否循环播放
   preload: 'auto' # 预加载，可选值: 'none', 'metadata', 'auto'
-  volume: 0.7
+  volume: 0.1
 
 # Whether to display the title of the recommended posts
 # 是否显示推荐文章的标题
@@ -119,27 +149,18 @@ recommend:
 favicon: /favicon.png
 logo: /medias/logo.png
 
-# The configuration of the second button in the home banner,
-# including the display name of the button, the font awesome icon, and the hyperlink to the button.
-# 首页 banner 中的第二个按钮的配置，包括按钮的显示名称、font awesome图标和按钮的超链接.
-indexbtn:
-  enable: true
-  name: Github
-  icon: fab fa-github-alt
-  url: https://github.com/blinkfox/hexo-theme-matery
-
 # The configurations of the second line of home banner
 # icon/button will not show up if you leave the corresponding socialLink empty
 # 首页 banner 中的第二行个人信息配置，留空即不启用
 socialLink:
-  github:  https://github.com/blinkfox
-  email: 1181062873@qq.com
+  github:  #https://github.com/blinkfox
+  email: #1181062873@qq.com
   facebook: # https://www.facebook.com/xxx
   twitter: # https://twitter.com/xxx
-  qq: 1181062873
+  qq: #1181062873
   weibo: # https://weibo.com/xxx
   zhihu: # https://www.zhihu.com/xxx
-  rss: true # true、false
+  rss: #true # true、false
 
 # Whether to activate the Post TOC, and Configure which title types are supported by TOC support.
 # You can add `toc: false` to the Front-matter of a post to turn off the TOC.
@@ -153,14 +174,14 @@ toc:
 
 # 代码块相关
 code:
-  lang: true # 代码块是否显示名称
+  lang: false # 代码块是否显示名称
   copy: true # 代码块是否可复制
-  shrink: true # 代码块是否可以收缩
+  shrink: false # 代码块是否可以收缩
   break: false # 代码是否折行
 
 # 是否激活文章末尾的打赏功能，默认激活（你替换为的你自己的微信、支付宝二维码图片、或者使用网络图片也可以）.
 reward:
-  enable: true
+  enable: false
   title: 你的赏识是我前进的动力
   wechat: /medias/reward/wechat.png
   alipay: /medias/reward/alipay.jpg
@@ -198,20 +219,37 @@ postInfo:
 # Whether to activate the 'love' effect of clicking on the page.
 # 是否激活点击页面的'爱心'效果，默认激活.
 clicklove:
-  enable: true
+  enable: false
 
 # profile in about page, including avatars, career, and personal introductions.
 # 在”关于”页面中配置个人信息，包括头像、职业和个人介绍.
 profile:
   avatar: /medias/avatar.jpg
-  career: Software Engineer
-  introduction: If you wish to succeed, you should use persistence as your good friend, experience as your reference, prudence as your brother and hope as your sentry.
-
+  pig: /medias/pig.jfif
+  kawayi: /medias/kawayi.png
+  love: /medias/love.gif
+  boy: 徐江桥
+  girl: 夏梦帆
+  career_boy: Software Engineer
+  career_girl: Environmental Engineer
+  boy_color: White
+  boy_drink: Green Tea/Black Tea
+  boy_fruit: Apple/Banana/Orange
+  girl_color: Pink/Coffee
+  girl_drink: Water
+  girl_fruit: Strawberry
+  introduction:
+    - I've had my head tilted up to the stars.It wasn't meeting them.It was meeting you
+    - 海底月是天上月，眼前人是心上人
+    - You mean the world to me
+    - 这世界，全是你
+    - Grow old along with me, the best is yet to be
+    - 执子之手，与子偕老
 # config my projects informations in about page.
 # If you don't want to display this `My Projects` content, you can deactivate or delete this configuration.
 # 在“关于”页面配置"我的项目"信息，如果你不需要这些信息则可以将其设置为不激活或者将其删除.
 myProjects:
-  enable: true
+  enable: false
   data:
     hexo-theme-matery:
       icon: fas fa-file-alt
@@ -235,30 +273,35 @@ myProjects:
 mySkills:
   enable: true
   data:
-    Java:
+    hand in hand:
       background: 'linear-gradient(to right, #FF0066 0%, #FF00CC 100%)'
-      percent: 85%
-    JavaScript:
+      percent: 100%
+    soul kiss:
       background: 'linear-gradient(to right, #9900FF 0%, #CC66FF 100%)'
-      percent: 80%
-    HTML5:
+      percent: 100%
+    meet parents:
       background: 'linear-gradient(to right, #2196F3 0%, #42A5F5 100%)'
       percent: 80%
-    CSS:
+    journey:
       background: 'linear-gradient(to right, #00BCD4 0%, #80DEEA 100%)'
-      percent: 70%
-    SQL:
+      percent: 40%
+    live together:
       background: 'linear-gradient(to right, #4CAF50 0%, #81C784 100%)'
-      percent: 90%
-    程序设计:
+      percent: 5%
+    look forward:
       background: 'linear-gradient(to right, #FFEB3B 0%, #FFF176 100%)'
       percent: 75%
-
+    sweet home:
+      background: 'linear-gradient(to right, #FFAB3B 0%, #FFA116 100%)'
+      percent: 99%
+    wedding:
+      background: 'linear-gradient(to right, #FF453B 0%, #FFBB16 100%)'
+      percent: 22%
 # config gallery of my photos in about page.
 # If you don't want to display this `Gallery` content, you can deactivate or delete this configuration.
 # 在“关于”页面配置"我的相册"图片，如果你不需要这些信息则可以将其设置为不激活或者将其删除.
 myGallery:
-  enable: true
+  enable: false
   data:
     - /medias/featureimages/0.jpg
     - /medias/featureimages/1.jpg
@@ -348,7 +391,7 @@ changyan:
 # Whether to display fork me on github icon and link, default true, You can change it to your repo address
 # 配置是否在 header 中显示 fork me on github 的图标，默认为true，你可以修改为你的仓库地址.
 githubLink:
-  enable: true
+  enable: false
   url: https://github.com/blinkfox/hexo-theme-matery
   title: Fork Me
 
@@ -376,9 +419,9 @@ verifyPassword:
 # busuanzi(http://busuanzi.ibruce.info/) website statistics
 # 不蒜子(http://busuanzi.ibruce.info/) 网站统计
 busuanziStatistics:
-  enable: true
-  totalTraffic: true # 总访问量
-  totalNumberOfvisitors: true # 总人次
+  enable: false
+  totalTraffic: false # 总访问量
+  totalNumberOfvisitors: false # 总人次
 
 # Add google analytics configuration
 # 添加 Google Analytics 配置
@@ -393,7 +436,7 @@ baiduAnalytics:
   id:
 
 # 百度搜索资源平台提交链接
-baiduPush: true
+baiduPush: false
 
 # The used front-end library can be replaced with the corresponding CDN address as needed,
 # If the specific version is not specified below, you can use the latest version.
@@ -516,7 +559,7 @@ canvas_nest:
 
 # 背景静止彩带.
 ribbon:
-  enable: false
+  enable: true
   size: 150 # 彩带大小, 默认: 90.
   alpha: 0.6 # 彩带透明度 (0 ~ 1), 默认: 0.6.
   zIndex: -1 # 背景的z-index属性，css属性用于控制所在层的位置, 默认: -1.
@@ -537,22 +580,9 @@ addthis:
   enable: false
   pubid:  # 前往https://www.addthis.com/获取
 
-# 打字效果副标题.
-# 如果有符号 ‘ ，请在 ’ 前面加上 \
-subtitle:
-  enable: true
-  loop: true # 是否循环
-  showCursor: true # 是否显示光标
-  startDelay: 300 # 开始延迟
-  typeSpeed: 100 # 打字速度
-  backSpeed: 50 # 删除速度
-  sub:
-    - 从来没有真正的绝境, 只有心灵的迷途
-    - Never really desperate, only the lost of the soul
-
 # 手机二级菜单.
 navMenu:
-  mleft: false # 二级侧栏子菜单是否对齐左边
+  mleft: true # 二级侧栏子菜单是否对齐左边
   bgColor: " " # 二级侧栏子菜单背景颜色,留空即为全局背景色
 
 # 网页预加载.
@@ -584,7 +614,7 @@ jsDelivr:
   
 # 网站背景图
 background:
-  enable: false
+  enable: true
   url: "https://cdn.jsdelivr.net/gh/Tokisaki-Galaxy/res/site/medias/background.jpg"
 
 # 说说 https://artitalk.js.org/

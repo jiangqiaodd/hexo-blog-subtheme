@@ -17,7 +17,7 @@
                         <%- partial('_partial/post-statis') %>
                     </div>
                     <div class="col s12 m12 l4">
-                        <div class="profile center-align">
+                        <div class="profile left-align">
                             <div class="avatar">
                                 <img src="<%- theme.jsDelivr.url %><%- url_for(theme.profile.avatar) %>" alt="<%- config.author %>"
                                      class="circle responsive-img avatar-img">
@@ -26,14 +26,46 @@
                                 <div class="post-statis hide-on-large-only" data-aos="zoom-in-right">
                                     <%- partial('_partial/post-statis') %>
                                 </div>
-                                <div class="title"><%- config.author %></div>
-                                <div class="career"><%- theme.profile.career %></div>
+                                <div class="title"><%- theme.profile.boy %></div>
+                                <div class="career"><%- theme.profile.career_boy %></div>
+                                <div>
+                                <ul >
+                                  <li><b>Loved Color: <%- theme.profile.boy_color %></li>
+                                  <li>Loved Drink: <%- theme.profile.boy_drink %></li>
+                                  <li>Loved Fruits: <%- theme.profile.boy_fruit %></li>
+                                </ul>
+                                </div>
                                 <div class="social-link hide-on-large-only" data-aos="zoom-in-left">
                                     <%- partial('_partial/social-link') %>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <div class="col s12 m12 l4">
+                        <div class="profile left-align">
+                            <div class="avatar">
+                                <img src="<%- theme.jsDelivr.url %><%- url_for(theme.profile.pig) %>" alt="<%- config.author %>"
+                                     class="circle responsive-img avatar-img">
+                            </div>
+                            <div class="author">
+                                <div class="post-statis hide-on-large-only" data-aos="zoom-in-right">
+                                    <%- partial('_partial/post-statis') %>
+                                </div>
+                                <div class="title"><%- theme.profile.girl %></div>
+                                <div class="career" center-align><%- theme.profile.career_girl %></div>
+                                <ul >
+                                  <li>Loved Color: <%- theme.profile.girl_color %></li>
+                                  <li>Loved Drink: <%- theme.profile.girl_drink %></li>
+                                  <li>Loved Fruits: <%- theme.profile.girl_fruit %></li>
+                                </ul>
+                                <div class="social-link hide-on-large-only" data-aos="zoom-in-left">
+                                    <%- partial('_partial/social-link') %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="col l4 hide-on-med-and-down" data-aos="zoom-in-left">
                         <div class="social-link">
                             <%- partial('_partial/social-link') %>
@@ -41,9 +73,12 @@
                     </div>
                 </div>
 
-                <div class="introduction center-align" data-aos="fade-up"><%= theme.profile.introduction %></div>
-
-                <%- partial('_widget/post-charts') %>
+                <div class="center-align" data-aos="fade-up" style="color:#F00" ><%= theme.profile.introduction[0] %></div>
+                <div class="introduction center-align" data-aos="fade-up"><%= theme.profile.introduction[1] %></div>
+                <div class="center-align" data-aos="fade-up" style="color:#F00"><%= theme.profile.introduction[2] %></div>
+                <div class="introduction center-align" data-aos="fade-up"><%= theme.profile.introduction[3] %></div>
+                <div class="center-align" data-aos="fade-up" style="color:#F00"><%= theme.profile.introduction[4] %></div>
+                <div class="introduction center-align" data-aos="fade-up"><%= theme.profile.introduction[5] %></div>
 
                 <% if (theme.myProjects && theme.myProjects.enable) { %>
                 <%- partial('_widget/my-projects') %>
