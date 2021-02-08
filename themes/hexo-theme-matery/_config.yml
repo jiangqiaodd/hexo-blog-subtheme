@@ -230,11 +230,11 @@ profile:
   love: /medias/love.gif
   boy: 徐江桥
   girl: 夏梦帆
-  career_boy: Software Engineer
-  career_girl: Environmental Engineer
+  career_boy: Software
+  career_girl: Environmental
   boy_color: White
-  boy_drink: Green Tea/Black Tea
-  boy_fruit: Apple/Banana/Orange
+  boy_drink: Green Tea
+  boy_fruit: Banana/Orange
   girl_color: Pink/Coffee
   girl_drink: Water
   girl_fruit: Strawberry

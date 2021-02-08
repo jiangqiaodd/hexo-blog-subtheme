@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Bridge of Dream
+title: Dream
 subtitle: '乔木爱做梦'
 description: '恋恋不忘，必有回响~ ~'
 keywords:
@@ -13,7 +13,7 @@ timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
-url: http://example.com/matery/
+url: http://bridgeofdream/matery/
 root: /matery/
 permalink: :year/:month/:day/:title/
 permalink_defaults:

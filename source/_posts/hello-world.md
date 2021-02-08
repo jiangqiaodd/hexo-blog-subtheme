@@ -1,6 +1,6 @@
 ---
 title: Hello World, My Hexo
-date: 2021-02-01 10:48:09
+date: 2021-01-10 10:48:09
 tags: hexo
 ---
 如何使用hexo构建自己的博客呢？

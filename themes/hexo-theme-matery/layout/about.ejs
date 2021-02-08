@@ -13,11 +13,8 @@
         <div class="card">
             <div class="card-content">
                 <div class="row">
-                    <div class="post-statis col l4 hide-on-med-and-down" data-aos="zoom-in-right">
-                        <%- partial('_partial/post-statis') %>
-                    </div>
-                    <div class="col s12 m12 l4">
-                        <div class="profile left-align">
+                    <div class="col s6 m6 l6">
+                        <div class="profiles right-align">
                             <div class="avatar">
                                 <img src="<%- theme.jsDelivr.url %><%- url_for(theme.profile.avatar) %>" alt="<%- config.author %>"
                                      class="circle responsive-img avatar-img">
@@ -30,9 +27,10 @@
                                 <div class="career"><%- theme.profile.career_boy %></div>
                                 <div>
                                 <ul >
-                                  <li><b>Loved Color: <%- theme.profile.boy_color %></li>
-                                  <li>Loved Drink: <%- theme.profile.boy_drink %></li>
-                                  <li>Loved Fruits: <%- theme.profile.boy_fruit %></li>
+                                  <li><b>Color: <%- theme.profile.boy_color %></li>
+                                  <li>Drink: <%- theme.profile.boy_drink %></li>
+                                  <li>Fruits: <%- theme.profile.boy_fruit %></li>
+                                  <li>Girl: <%- theme.profile.girl %></li>
                                 </ul>
                                 </div>
                                 <div class="social-link hide-on-large-only" data-aos="zoom-in-left">
@@ -42,8 +40,10 @@
                         </div>
                     </div>
 
-                    <div class="col s12 m12 l4">
-                        <div class="profile left-align">
+
+
+                    <div class="col s6 m6 l6">
+                        <div class="profiles left-align">
                             <div class="avatar">
                                 <img src="<%- theme.jsDelivr.url %><%- url_for(theme.profile.pig) %>" alt="<%- config.author %>"
                                      class="circle responsive-img avatar-img">
@@ -55,9 +55,10 @@
                                 <div class="title"><%- theme.profile.girl %></div>
                                 <div class="career" center-align><%- theme.profile.career_girl %></div>
                                 <ul >
-                                  <li>Loved Color: <%- theme.profile.girl_color %></li>
-                                  <li>Loved Drink: <%- theme.profile.girl_drink %></li>
-                                  <li>Loved Fruits: <%- theme.profile.girl_fruit %></li>
+                                  <li>Color: <%- theme.profile.girl_color %></li>
+                                  <li>Drink: <%- theme.profile.girl_drink %></li>
+                                  <li>Fruits: <%- theme.profile.girl_fruit %></li>
+                                  <li>Boy: <%- theme.profile.boy %></li>
                                 </ul>
                                 <div class="social-link hide-on-large-only" data-aos="zoom-in-left">
                                     <%- partial('_partial/social-link') %>
@@ -66,11 +67,16 @@
                         </div>
                     </div>
 
+
                     <div class="col l4 hide-on-med-and-down" data-aos="zoom-in-left">
                         <div class="social-link">
                             <%- partial('_partial/social-link') %>
                         </div>
                     </div>
+                </div>
+
+                <div class="post-statis center-align" >
+                    <img src="<%- theme.jsDelivr.url %><%- url_for(theme.profile.love) %>" alt="<%- config.author %>">
                 </div>
 
                 <div class="center-align" data-aos="fade-up" style="color:#F00" ><%= theme.profile.introduction[0] %></div>
